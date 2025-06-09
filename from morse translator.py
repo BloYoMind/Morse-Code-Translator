@@ -5,17 +5,12 @@ code = ""
 translation = ""
 letters = []
 for character in morse:
-    print("character: "+character)
     if character != " ":
         code += character
     elif character == " ":
-        print("code: "+code)
         letters.append(code)
         code = ""
-print("letters: ")
-print(letters)
 for sequence in letters:
-    print("sequence"+sequence)
     equivalent = morse_list.index(sequence)
     english = english_list[equivalent]
     translation += english

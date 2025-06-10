@@ -5,11 +5,15 @@ def from_morse(morse)
     translation = ""
     letters = []
     for character in morse:
-        if character != " ":
-            code += character
-        elif character == " ":
-            letters.append(code)
-            code = ""
+    if character == " ":
+        letters.append(code)
+        code = ""
+    elif character == "/":
+        letters.append(code)
+        code = ""
+        letters.append(" ")
+    else:
+        code += character
     for sequence in letters:
         equivalent = morse_list.index(sequence)
         english = english_list[equivalent]

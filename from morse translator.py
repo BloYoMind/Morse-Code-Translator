@@ -1,19 +1,19 @@
-def from_morse(morse)
+def from_morse(morse):
     morse_list = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."," "]
     english_list = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "]
     code = ""
     translation = ""
     letters = []
     for character in morse:
-    if character == " ":
-        letters.append(code)
-        code = ""
-    elif character == "/":
-        letters.append(code)
-        code = ""
-        letters.append(" ")
-    else:
-        code += character
+        if character == " ":
+            letters.append(code)
+            code = ""
+        elif character == "/":
+            letters.append(code)
+            code = ""
+            letters.append(" ")
+        else:
+            code += character
     for sequence in letters:
         equivalent = morse_list.index(sequence)
         english = english_list[equivalent]
